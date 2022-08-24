@@ -68,9 +68,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-    if: ${{ github.ref == 'refs/heads/main' }} #
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages # deploy to branch.
-          publish_dir: ./public
-          force_orphan: true
+    with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      publish_branch: gh-pages # deploy to branch.
+      publish_dir: ./public
+      force_orphan: true
